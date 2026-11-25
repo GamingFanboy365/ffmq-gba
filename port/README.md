@@ -159,8 +159,34 @@ interrupt. The first frame that differs points at the bug.
 | SNES hardware layer on the GBA: VRAM, CGRAM, OAM, DMA, HDMA, the IRQ schedule; Mode 1 to GBA mode 0 | the title screen on a GBA |
 | Screen fit (208 visible lines into 160), Mode 7 intro, sound (the SPC700 driver translated the same way, plus a mixer), saves | the game playable |
 
-## Licences
+## Licences and outside code
 
 The port's own code is public domain, like the rest of this repository.
 `third_party/lakesnes/` is MIT licensed (`third_party/lakesnes/LICENSE.txt`)
 and is only used by host tools.
+
+Code from other projects may come into the port only under a permissive
+licence, one that allows any use, commercial included, without putting its
+terms on the rest of the port: MIT, BSD, zlib, Apache 2.0, or a public-domain
+dedication such as the Unlicense or CC0. Code under a non-commercial licence
+(such as PolyForm Noncommercial or CC BY-NC) or a copyleft licence (such as
+the GPL) stays out, however useful it looks. Check the licence before copying
+anything, even a single function, because the restrictive ones are easy to
+miss.
+
+Outside code that qualifies lives in its own directory under `third_party/`,
+with its licence file and a note saying where it came from (the repository and
+commit) and what was changed, as `third_party/lakesnes/README.ffmq-gba.md`
+does. Its notices stay with it, and if it is ever built into the cartridge,
+they ship with the cartridge's release too.
+
+Projects whose licences don't qualify can be learned from through their
+documentation, but not copied from. Whoever works on a part of the port
+should not read such a project's source for the same part, so that the port's
+version stays independent. The recompiler's design follows this rule: it was
+worked out from the game's own behaviour and from general techniques, without
+reading the source of other SNES recompilers.
+
+Nothing taken from the game is committed either. The C translated from the
+game's code, and any data the cartridge needs from the ROM, are to be
+produced at build time from the player's own copy, checked by its SHA-1.
