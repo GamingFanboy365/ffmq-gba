@@ -1,5 +1,16 @@
 ﻿# Changelog - FFMQ Reverse Engineering Project
 
+## [Unreleased] - 2026-11-25 - Game Boy Advance port groundwork
+
+Started a port of the game to the Game Boy Advance in `port/` (see
+`port/README.md`). It adds a headless SNES reference runner
+(`port/tools/snesrun.c`) on a vendored, MIT-licensed LakeSnes core with
+tracing hooks, the first pieces of a 65816 static recompiler
+(`port/recomp/`), and notes on how the game drives the hardware: frames
+driven by IRQs at lines 7 and 216 with no NMI, code run from RAM, and
+dispatchers that jump through the stack.
+
+
 ## [Unreleased] - 2025-11-17 - System Documentation Expansion 📚
 
 ### 🎯 Major Documentation

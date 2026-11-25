@@ -1,5 +1,7 @@
 # Final Fantasy Mystic Quest - SNES Disassembly & ROM Hack Project
 
+> **🎮 Game Boy Advance port:** work in progress in [`port/`](port/README.md): a reference runner, recompiler groundwork and notes on the game's hardware use.
+
 > **🚀 Quick Start:** Want to mod enemies? See [Modding Quick Reference](docs/guides/MODDING_QUICK_REFERENCE.md) for a 3-step guide!
 
 > **🤖 Automatic Logging Active:** Just run `.\start-tracking.ps1` once and all your work is logged automatically!  
